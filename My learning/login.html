@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The KapdeLatte</title>
+    <link rel="stylesheet" href="my_color_palette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #F7F5F2;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- Reuse Top Bar --- */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centered Logo for Login Page */
+            padding: 24px 40px;
+            position: relative;
+        }
+
+        /* A small 'X' button to close/go back home */
+        .close-login {
+            position: absolute;
+            right: 40px;
+            top: 30px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #000;
+        }
+
+        .brand-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* --- Login Container --- */
+        .login-wrapper {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        /* --- Form Styling (Same as Contact) --- */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .form-group {
+            position: relative;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc; /* Lighter grey initially */
+            padding: 10px 0;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-bottom: 1px solid #000;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 14px;
+            color: #888;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation: Float label up */
+        .form-input:focus ~ .form-label,
+        .form-input:valid ~ .form-label {
+            top: -20px;
+            font-size: 11px;
+            color: #000;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- Buttons --- */
+        .submit-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+        }
+
+        /* --- Footer Links --- */
+        .form-footer {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: #666;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .footer-link:hover {
+            border-bottom: 1px solid #666;
+        }
+        
+        /* Create Account Section */
+        .create-account {
+            margin-top: 60px;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+        .create-account p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .create-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 12px 30px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+        }
+        .create-btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <a href="letslearn.html" class="brand-link">The KapdeLatte</a>
+        <a href="letslearn.html" class="close-login">&times;</a>
+    </header>
+
+    <main class="login-wrapper">
+        <h1 class="page-title">Log In</h1>
+
+        <form class="login-form">
+            
+            <div class="form-group">
+                <input type="email" class="form-input" id="email" required>
+                <label for="email" class="form-label">E-MAIL</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-input" id="password" required>
+                <label for="password" class="form-label">PASSWORD</label>
+            </div>
+
+            <div class="form-footer">
+                <a href="#" class="footer-link">Forgot your password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn">LOG IN</button>
+
+        </form>
+
+        <div class="create-account">
+            <p>Don't have an account?</p>
+            <a href="signup.html" class="create-btn">Create Account</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

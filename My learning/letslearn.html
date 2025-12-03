@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="my_color_palette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="top-bar">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <a href="letslearn.html" class="brand-link">The KapdeLatte</a>
+    <div class="header-right">
+        <button class="totebag-btn" onclick="toggleCart()">TOTEBAG (0)</button>
+        
+        <a href="login.html" class="login-btn">LOGIN</a>
+    </div>
+  </header>
+
+  <aside class="side-nav" id="sideNav">
+    <nav>
+      <a href="#">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      
+    </nav>
+  </aside>
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <main class="main-content">
+    
+  <section class="hero-section">
+      <div class="hero-text">
+          <p class="hero-subtitle">EST. 2025</p>
+          <h1 class="hero-title">RHYTHM <br> IN EVERY <br> THREAD.</h1>
+          <a href="#" class="hero-btn">View Collection</a>
+      </div>
+  </section>
+
+  <section class="products-section">
+      <h2 class="section-title">New Arrivals</h2>
+      
+      <div class="product-grid">
+          
+          <div class="product-card">
+              <div class="product-image">
+                  <div class="placeholder-img"></div> 
+                  <button class="add-to-cart-btn" onclick="addToCart()">ADD TO TOTE</button>
+              </div>
+              <div class="product-info">
+                  <h3>The Classic Linen</h3>
+                  <p>₹ 2,499</p>
+              </div>
+          </div>
+
+          <div class="product-card">
+              <div class="product-image">
+                  <div class="placeholder-img"></div>
+                  <button class="add-to-cart-btn" onclick="addToCart()">ADD TO TOTE</button>
+              </div>
+              <div class="product-info">
+                  <h3>Silk Rhythm Shirt</h3>
+                  <p>₹ 3,200</p>
+              </div>
+          </div>
+
+          <div class="product-card">
+              <div class="product-image">
+                  <div class="placeholder-img"></div>
+                  <button class="add-to-cart-btn" onclick="addToCart()">ADD TO TOTE</button>
+              </div>
+              <div class="product-info">
+                  <h3>Evening Flow Dress</h3>
+                  <p>₹ 4,500</p>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+</main>
+
+ 
+<aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2 class="cart-title">Your Totebag</h2>
+        <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    
+    <div class="cart-items">
+        <p class="empty-msg">Your totebag is currently empty.</p>
+    </div>
+</aside>
+
+  <script>
+
+    // Toggle the Left Menu
+    function toggleMenu() {
+        const sideNav = document.getElementById("sideNav");
+        const overlay = document.getElementById("overlay");
+        const cartSidebar = document.getElementById("cartSidebar");
+
+        // Close cart if it's open when we click menu
+        cartSidebar.classList.remove("open");
+
+        sideNav.classList.toggle("open");
+        
+        // Logic to handle overlay visibility
+        if (sideNav.classList.contains("open")) {
+            overlay.classList.add("open");
+        } else {
+            overlay.classList.remove("open");
+        }
+    }
+
+    // Toggle the Right Cart (Totebag)
+    function toggleCart() {
+        const cartSidebar = document.getElementById("cartSidebar");
+        const overlay = document.getElementById("overlay");
+        const sideNav = document.getElementById("sideNav");
+
+        // Close menu if it's open when we click cart
+        sideNav.classList.remove("open");
+
+        cartSidebar.classList.toggle("open");
+
+        // Logic to handle overlay visibility
+        if (cartSidebar.classList.contains("open")) {
+            overlay.classList.add("open");
+        } else {
+            overlay.classList.remove("open");
+        }
+    }
+
+    let cartCount = 0;
+
+    function addToCart() {
+        cartCount++;
+        // Find the button and update the text
+        document.querySelector('.totebag-btn').innerText = "TOTEBAG (" + cartCount + ")";
+        
+        // Optional: Open the cart to show the user
+        // toggleCart(); 
+        
+        alert("Item added to your Totebag!");
+    }
+
+    // Make the overlay close EVERYTHING when clicked
+    document.getElementById("overlay").onclick = function() {
+        document.getElementById("sideNav").classList.remove("open");
+        document.getElementById("cartSidebar").classList.remove("open");
+        document.getElementById("overlay").classList.remove("open");
+    };
+</script>
+</body>
+</html>

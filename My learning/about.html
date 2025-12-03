@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The KapdeLatte</title>
+    <link rel="stylesheet" href="my_color_palette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Page Specific Styles --- */
+        body {
+            background-color: #F7F5F2; /* Keeping your warm background */
+        }
+
+        .about-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        /* The Main Title */
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Section Styling */
+        .story-section {
+            margin-bottom: 80px;
+            opacity: 0; /* For animation */
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        /* Delays for animations so they load one by one */
+        .story-section:nth-child(2) { animation-delay: 0.2s; }
+        .story-section:nth-child(3) { animation-delay: 0.4s; }
+
+        .story-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-left: 3px solid #000;
+            padding-left: 20px;
+        }
+
+        .story-text {
+            font-family: 'Arial', sans-serif; /* Clean font for reading */
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        /* Quote styling */
+        .highlight-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            text-align: center;
+            color: #222;
+            margin: 60px 0;
+            padding: 0 40px;
+            line-height: 1.4;
+        }
+
+        .back-link-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border: 1px solid #000;
+            padding: 15px 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Simple Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+  <header class="top-bar">
+      <a href="letslearn.html" class="brand-link">The KapdeLatte</a>
+      <button class="login-btn">LOGIN</button>
+  </header>
+
+  <main class="about-wrapper">
+      
+      <h1 class="page-title">Brewing Style.</h1>
+
+      <section class="story-section">
+          <h2 class="story-heading">The Blend</h2>
+          <p class="story-text">
+              What happens when you mix the Hindi word for clothes (<em>Kapde</em>) with the world’s favorite comfort drink (<em>Latte</em>)? You get a brand that embodies the warmth of a coffee shop and the confidence of a runway.
+          </p>
+          <p class="story-text">
+              The KapdeLatte wasn't started in a boardroom. It began with a simple observation: why does high fashion have to feel so stiff? We wanted to create a collection that feels as good as that first sip of coffee in the morning—warm, energizing, and essential.
+          </p>
+      </section>
+
+      <div class="highlight-quote">
+          "Fashion should not be a uniform. It should be a conversation between comfort and character."
+      </div>
+
+      <section class="story-section">
+          <h2 class="story-heading">Our Philosophy</h2>
+          <p class="story-text">
+              We live in a fast-paced world, but we believe in slow fashion. We don't chase fleeting trends that fade after a season. Instead, we curate pieces that are timeless.
+          </p>
+          <p class="story-text">
+              Our fabrics are hand-picked for breathability and durability. Whether you are running a startup, attending a gallery opening, or just reading a book on a Sunday afternoon, The KapdeLatte is designed to fit your life, not complicate it.
+          </p>
+      </section>
+
+      <section class="story-section">
+          <h2 class="story-heading">For the Modern Soul</h2>
+          <p class="story-text">
+              We are more than just a clothing label; we are a community of dreamers, creators, and coffee lovers. When you wear our brand, you aren't just wearing clothes. You are wearing a feeling.
+          </p>
+          <p class="story-text">
+              Thank you for stopping by. Grab a cup, browse the collection, and stay a while.
+          </p>
+      </section>
+
+      <div class="back-link-container">
+          <a href="letslearn.html" class="back-link">Start Shopping</a>
+      </div>
+
+  </main>
+
+</body>
+</html>

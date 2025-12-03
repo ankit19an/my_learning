@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - The KapdeLatte</title>
+    <link rel="stylesheet" href="my_color_palette.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* REUSING LOGIN STYLES FOR CONSISTENCY */
+        body {
+            background-color: #F7F5F2;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 40px;
+            position: relative;
+        }
+
+        .close-login {
+            position: absolute;
+            right: 40px;
+            top: 30px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #000;
+        }
+
+        .brand-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .login-wrapper {
+            max-width: 400px;
+            margin: 40px auto; /* Slightly less margin to fit more fields */
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .form-group {
+            position: relative;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-bottom: 1px solid #000;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 14px;
+            color: #888;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation: Float label up */
+        .form-input:focus ~ .form-label,
+        .form-input:valid ~ .form-label {
+            top: -20px;
+            font-size: 11px;
+            color: #000;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
+        .submit-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+        }
+
+        /* Footer specifically for switching back to login */
+        .switch-account {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+        .switch-link {
+            text-decoration: underline;
+            color: #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <a href="letslearn.html" class="brand-link">The KapdeLatte</a>
+        <a href="letslearn.html" class="close-login">&times;</a>
+    </header>
+
+    <main class="login-wrapper">
+        <h1 class="page-title">Create Account</h1>
+
+        <form class="login-form">
+            
+            <div class="form-group">
+                <input type="text" class="form-input" id="name" required>
+                <label for="name" class="form-label">FULL NAME</label>
+            </div>
+
+            <div class="form-group">
+                <input type="email" class="form-input" id="email" required>
+                <label for="email" class="form-label">E-MAIL</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-input" id="password" required>
+                <label for="password" class="form-label">PASSWORD</label>
+            </div>
+
+            <button type="submit" class="submit-btn">REGISTER</button>
+
+        </form>
+
+        <div class="switch-account">
+            <p>Already have an account? <a href="login.html" class="switch-link">Log In</a></p>
+        </div>
+
+    </main>
+
+</body>
+</html>
